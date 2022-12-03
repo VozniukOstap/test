@@ -1,0 +1,27 @@
+while True:
+    text = str(input('Введіть слова:')).split(' ')
+    words = []
+    duplicate = False
+    for i in text:
+        if len(i) >= 3:
+              for a in words:
+               if i == a:
+                  duplicate = True
+
+              if duplicate   == True:
+               duplicate = False
+               continue
+              words.append(i)
+              duplicate = False
+        else:
+            continue
+    words.sort()
+    print(words)
+
+
+    letterss = "".join(words)
+
+
+    for char in set(letterss):
+        count = letterss.count(char)
+        print('{}-{}'.format(char, count))
